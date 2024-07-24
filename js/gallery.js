@@ -65,3 +65,20 @@ const images = [
     description: "Lighthouse Coast Sea",
   },
 ];
+
+function getListItemHtml(image) {
+  return `
+<li class="gallery-item">
+  <a class="gallery-link" href=${image.original}>
+    <img
+      class="gallery-image"
+      src=${image.preview}
+      data-source="large-image.jpg"
+      alt=${image.description}
+    />
+  </a>
+</li>
+`;
+}
+
+console.log(getListItemHtml(images[0]));
