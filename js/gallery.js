@@ -66,6 +66,13 @@ const images = [
   },
 ];
 
+/**
+ * create HTML markup fot gallery-item
+ * @param {*} image array element
+ * @returns HTML markup for <li> gallery element
+ * @example
+ * console.log(getListItemHtml(images[0]));
+ */
 function getListItemHtml(image) {
   return `
 <li class="gallery-item">
@@ -77,8 +84,26 @@ function getListItemHtml(image) {
       alt=${image.description}
     />
   </a>
-</li>
-`;
+</li>`;
 }
 
-console.log(getListItemHtml(images[0]));
+//console.log(getListItemHtml(images[0]));
+
+/**
+ * get HTML markup for images array
+ * @param {Array} images
+ * @returns HTML markup for images
+ */
+function getListHtml(images) {
+  let markup = "";
+  for (const image of images) {
+    markup += getListItemHtml(image);
+  }
+  return markup;
+}
+
+// console.log(getListHtml(images));
+
+const gallery = document.querySelector(".gallery");
+
+gallery.insertAdjacentHTML("afterbegin", getListHtml(images));
