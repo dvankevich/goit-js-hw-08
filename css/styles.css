@@ -40,3 +40,12 @@ a {
   width: 100%;
   object-fit: cover;
 }
+
+.basicLightbox {
+  background: rgba(46, 47, 66, 0.8);
+}
+
+
+/* .basicLightbox__placeholder>img:first-child:last-child {
+  margin: 28px 164px;
+} */

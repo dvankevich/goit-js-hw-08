@@ -111,5 +111,14 @@ const galleryItem = document.querySelector("ul.gallery");
 galleryItem.addEventListener("click", function (event) {
   event.preventDefault();
   // console.log("galleryItem handler");
-  console.log(event.target.parentElement.attributes.href.textContent); // get original image link
+  //console.log(event.target.attributes[0].nodeValue === "gallery-image");
+  //console.log(event.target.classList.contains("gallery-image"));
+  if (event.target.classList.contains("gallery-image")) {
+    console.log(event.target.parentElement.attributes.href.textContent); // get original image link
+
+    const instance = basicLightbox.create(`
+    <img src="${event.target.parentElement.attributes.href.textContent}">`);
+
+    instance.show();
+  }
 });

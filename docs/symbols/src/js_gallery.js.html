@@ -91,4 +91,34 @@
 <span class='line'> 84</span> </span><span class="WHIT">      </span><span class="NAME">alt</span><span class="PUNC">=</span><span class="NAME">$</span><span class="PUNC">{</span><span class="NAME">image.description</span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'> 85</span> </span><span class="WHIT">    </span><span class="REGX">/>
 <span class='line'> 86</span>   &lt;/</span><span class="NAME">a</span><span class="PUNC">></span><span class="WHIT">
-<span class='line'> 87</span> </span><span class="PUNC">&lt;</span><span class="TOKN"></span></pre></body></html>
+<span class='line'> 87</span> </span><span class="PUNC">&lt;</span><span class="REGX">/li>`;
+<span class='line'> 88</span> }
+<span class='line'> 89</span> 
+<span class='line'> 90</span> /</span><span class="REGX">/console.log(getListItemHtml(images[0]));
+<span class='line'> 91</span> 
+<span class='line'> 92</span> /</span><span class="PUNC">*</span><span class="PUNC">*</span><span class="WHIT">
+<span class='line'> 93</span> </span><span class="WHIT"> </span><span class="PUNC">*</span><span class="WHIT"> </span><span class="NAME">get</span><span class="WHIT"> </span><span class="NAME">HTML</span><span class="WHIT"> </span><span class="NAME">markup</span><span class="WHIT"> </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="NAME">images</span><span class="WHIT"> </span><span class="NAME">array</span><span class="WHIT">
+<span class='line'> 94</span> </span><span class="WHIT"> </span><span class="PUNC">*</span><span class="WHIT"> </span><span class="TOKN">@</span><span class="NAME">param</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">Array</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="NAME">images</span><span class="WHIT">
+<span class='line'> 95</span> </span><span class="WHIT"> </span><span class="PUNC">*</span><span class="WHIT"> </span><span class="TOKN">@</span><span class="NAME">returns</span><span class="WHIT"> </span><span class="NAME">HTML</span><span class="WHIT"> </span><span class="NAME">markup</span><span class="WHIT"> </span><span class="KEYW">for</span><span class="WHIT"> </span><span class="NAME">images</span><span class="WHIT">
+<span class='line'> 96</span> </span><span class="WHIT"> </span><span class="PUNC">*</span><span class="REGX">/
+<span class='line'> 97</span> function getListHtml(images) {
+<span class='line'> 98</span>   let markup = "";
+<span class='line'> 99</span>   for (const image of images) {
+<span class='line'>100</span>     markup += getListItemHtml(image);
+<span class='line'>101</span>   }
+<span class='line'>102</span>   return markup;
+<span class='line'>103</span> }
+<span class='line'>104</span> 
+<span class='line'>105</span> /</span><span class="REGX">/ console.log(getListHtml(images));
+<span class='line'>106</span> 
+<span class='line'>107</span> const gallery = document.querySelector(".gallery");
+<span class='line'>108</span> gallery.insertAdjacentHTML("afterbegin", getListHtml(images)); /</span><span class="REGX">/ add gallery HTML markup
+<span class='line'>109</span> 
+<span class='line'>110</span> const galleryItem = document.querySelector("ul.gallery");
+<span class='line'>111</span> galleryItem.addEventListener("click", function (event) {
+<span class='line'>112</span>   event.preventDefault();
+<span class='line'>113</span>   /</span><span class="REGX">/ console.log("galleryItem handler");
+<span class='line'>114</span>   /</span><span class="REGX">/console.log(event.target.attributes[0].nodeValue === "gallery-image");
+<span class='line'>115</span>   /</span><span class="REGX">/console.log(event.target.classList.contains("gallery-image"));
+<span class='line'>116</span>   if (event.target.classList.contains("gallery-image")) {
+<span class='line'>117</span>     console.log(event.target.parentElement.attributes.href.textContent); /</span><span class="TOKN"></span></pre></body></html>
