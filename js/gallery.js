@@ -105,5 +105,11 @@ function getListHtml(images) {
 // console.log(getListHtml(images));
 
 const gallery = document.querySelector(".gallery");
+gallery.insertAdjacentHTML("afterbegin", getListHtml(images)); // add gallery HTML markup
 
-gallery.insertAdjacentHTML("afterbegin", getListHtml(images));
+const galleryItem = document.querySelector("ul.gallery");
+galleryItem.addEventListener("click", function (event) {
+  event.preventDefault();
+  // console.log("galleryItem handler");
+  console.log(event.target.parentElement.attributes.href.textContent); // get original image link
+});
