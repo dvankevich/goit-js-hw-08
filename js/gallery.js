@@ -1,78 +1,53 @@
-"use strict";
+'use strict';
 
 const images = [
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg",
-    description: "Hokkaido Flower",
+    preview: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg",
-    description: "Container Haulage Freight",
+    preview: 'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
+    description: 'Container Haulage Freight',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg",
-    description: "Aerial Beach View",
+    preview: 'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
+    description: 'Aerial Beach View',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg",
-    description: "Flower Blooms",
+    preview: 'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
+    description: 'Flower Blooms',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg",
-    description: "Alpine Mountains",
+    preview: 'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
+    description: 'Alpine Mountains',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg",
-    description: "Mountain Lake Sailing",
+    preview: 'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
+    description: 'Mountain Lake Sailing',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
-    description: "Alpine Spring Meadows",
+    preview: 'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
+    description: 'Alpine Spring Meadows',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
-    description: "Nature Landscape",
+    preview: 'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
   },
   {
-    preview:
-      "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg",
-    original:
-      "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
-    description: "Lighthouse Coast Sea",
+    preview: 'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original: 'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
   },
 ];
 
-/**
- * create HTML markup fot gallery-item
- * @param {*} image array element
- * @returns HTML markup for <li> gallery element
- * @example
- * console.log(getListItemHtml(images[0]));
- */
 function getListItemHtml(image) {
   return `
 <li class="gallery-item">
@@ -87,33 +62,21 @@ function getListItemHtml(image) {
 </li>`;
 }
 
-//console.log(getListItemHtml(images[0]));
-
-/**
- * get HTML markup for images array
- * @param {Array} images
- * @returns HTML markup for images
- */
 function getListHtml(images) {
-  let markup = "";
+  let markup = '';
   for (const image of images) {
     markup += getListItemHtml(image);
   }
   return markup;
 }
 
-// console.log(getListHtml(images));
+const gallery = document.querySelector('.gallery');
+gallery.insertAdjacentHTML('afterbegin', getListHtml(images)); // add gallery HTML markup
 
-const gallery = document.querySelector(".gallery");
-gallery.insertAdjacentHTML("afterbegin", getListHtml(images)); // add gallery HTML markup
-
-const galleryItem = document.querySelector("ul.gallery");
-galleryItem.addEventListener("click", function (event) {
+const galleryItem = document.querySelector('ul.gallery');
+galleryItem.addEventListener('click', function (event) {
   event.preventDefault();
-  // console.log("galleryItem handler");
-  //console.log(event.target.attributes[0].nodeValue === "gallery-image");
-  //console.log(event.target.classList.contains("gallery-image"));
-  if (event.target.classList.contains("gallery-image")) {
+  if (event.target.classList.contains('gallery-image')) {
     console.log(event.target.parentElement.attributes.href.textContent); // get original image link
 
     const instance = basicLightbox.create(`
